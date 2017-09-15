@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8" />
+	<title>03ex</title>
+</head>
+    
+<body>
+    <img src="images/citron.jpg" alt="citron" id="jackpot1">
+    <img src="images/citron.jpg" alt="citron" id="jackpot2">
+    <img src="images/citron.jpg" alt="citron" id="jackpot3">
+</body>
+    
+    <script>
+        //faut utiliser les getElementById ..... mais que ca donne la meme chose que l'ex 04 jackpot: 
+       var image1 = document.getElementById("jackpot1");
+        var image2 = document.getElementById("jackpot2");
+        var image3 = document.getElementById("jackpot3");
+       image1.addEventListener("click", jackpot)
+       image2.addEventListener("click", jackpot)
+       image3.addEventListener("click", jackpot)
+        
+       function jackpot(){
+           var symboles = new Array(5);
+           symboles[0] = "images/citron.jpg";
+           symboles[1] = "images/cloche.jpg";
+           symboles[2] = "images/orange.jpg";
+           symboles[3] = "images/prune.jpg";
+           symboles[4] = "images/sept.jpg";
+
+           
+           var nombreAleatoire1 = Math.floor(Math.random()*5)
+           var nombreAleatoire2 = Math.floor(Math.random()*5)
+           var nombreAleatoire3 = Math.floor(Math.random()*5)
+           //cette fonction nous donne les decimales, nous on a besoin des entiers. Alors on rajoute floor.
+           
+           image1.src = symboles[nombreAleatoire1];
+           image2.src = symboles[nombreAleatoire2];
+           image3.src = symboles[nombreAleatoire3];  
+           
+           if(nombreAleatoire1 == nombreAleatoire2 && nombreAleatoire2 == nombreAleatoire3){
+               alert("gagné !")
+           }
+           
+           /*
+           var tb = new Array(3);
+           tb[0] = new Array(3);
+           tb[1] = new Array(3);
+           tb[2] = new Array(3);
+           
+           tb[1][2] = "test"; 
+           */
+           
+       } 
+    </script>
+
+</html>
